@@ -30,10 +30,4 @@ class CarteScanata extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
-    //define accessor
-    public function getAccesAttribute()
-    {
-        return 1;
-    }
 }
