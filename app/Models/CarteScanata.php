@@ -14,8 +14,6 @@ class CarteScanata extends Model
     protected $table = 'carti_scanate';
     protected $guarded = [];
 
-    // protected $appends = ['acces'];
-
     public function path()
     {
         return "/carti-scanate/{$this->id}";

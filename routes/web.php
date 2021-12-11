@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CarteScanataController;
-use App\Http\Controllers\ImportDBController;
 
 /*
 |--------------------------------------------------------------------------
