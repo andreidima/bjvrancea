@@ -112,7 +112,7 @@ class CarteScanataController extends Controller
 
         $carte_scanata->delete();
 
-        return redirect('/carti-scanate')->with('status', 'Cartea „' . ($carte_scanata->titlu ?? '') . '” a a fost ștearsă cu succes!');
+        return redirect('/carti-scanate')->with('status', 'Cartea „' . ($carte_scanata->titlu ?? '') . '” a fost ștearsă cu succes!');
     }
 
     /**
@@ -124,12 +124,12 @@ class CarteScanataController extends Controller
     {
         return $request->validate(
             [
-                'user_id' => 'required',
                 'titlu' => 'required|max:500',
                 'autor' => 'nullable|max:500',
                 'editura' => 'nullable|max:500',
                 'anul' => 'nullable|max:500',
                 'nr_pagini' => 'nullable|numeric|integer|max:9999',
+                'user_id' => 'required',
             ],
             [
 
