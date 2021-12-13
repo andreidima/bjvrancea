@@ -128,7 +128,7 @@ class CarteScanataController extends Controller
                 'autor' => 'nullable|max:500',
                 'editura' => 'nullable|max:500',
                 'anul' => 'nullable|max:500',
-                'nr_pagini' => 'nullable|numeric|integer|max:9999',
+                'nr_pagini' => 'required|numeric|integer|max:9999',
                 'user_id' => 'required',
             ],
             [
