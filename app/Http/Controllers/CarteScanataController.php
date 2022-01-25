@@ -149,7 +149,7 @@ class CarteScanataController extends Controller
                 'autor' => 'nullable|max:500',
                 'inventar' => [
                     'required', 'max:500',
-                    Rule::unique('carti_scanate')->ignore($carte_scanate->id),
+                    Rule::unique('carti_scanate')->ignore($carte_scanate->id ?? ''),
                 ],
                 'editura' => 'nullable|max:500',
                 'anul' => 'nullable|max:500',
