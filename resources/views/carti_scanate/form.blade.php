@@ -4,7 +4,7 @@
     <div class="col-lg-12 mb-0">
 
         <div class="row p-2 mb-0">
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="titlu" class="mb-0 ps-3">Titlu*:</label>
                 <input
                     type="text"
@@ -14,7 +14,7 @@
                     value="{{ old('titlu', $carte_scanata->titlu) }}"
                     required>
             </div>
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="autor" class="mb-0 ps-3">Autor:</label>
                 <input
                     type="text"
@@ -24,7 +24,7 @@
                     value="{{ old('autor', $carte_scanata->autor) }}"
                     >
             </div>
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="inventar" class="mb-0 ps-3">Inventar*:</label>
                 <input
                     type="text"
@@ -34,7 +34,7 @@
                     value="{{ old('inventar', $carte_scanata->inventar) }}"
                     >
             </div>
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="editura" class="mb-0 ps-3">Editura:</label>
                 <input
                     type="text"
@@ -44,7 +44,7 @@
                     value="{{ old('editura', $carte_scanata->editura) }}"
                     >
             </div>
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="anul" class="mb-0 ps-3">Anul:</label>
                 <input
                     type="text"
@@ -54,7 +54,7 @@
                     value="{{ old('anul', $carte_scanata->anul) }}"
                     >
             </div>
-            <div class="col-lg-10 mb-2 mx-auto">
+            <div class="col-lg-6 mb-4 mx-auto">
                 <label for="nr_pagini" class="mb-0 ps-3">Nr. pagini*:</label>
                 <input
                     type="text"
