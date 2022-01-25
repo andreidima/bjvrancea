@@ -25,6 +25,16 @@
                     >
             </div>
             <div class="col-lg-10 mb-2 mx-auto">
+                <label for="inventar" class="mb-0 ps-3">Inventar*:</label>
+                <input
+                    type="text"
+                    class="form-control form-control-sm rounded-pill {{ $errors->has('inventar') ? 'is-invalid' : '' }}"
+                    name="inventar"
+                    placeholder=""
+                    value="{{ old('inventar', $carte_scanata->inventar) }}"
+                    >
+            </div>
+            <div class="col-lg-10 mb-2 mx-auto">
                 <label for="editura" class="mb-0 ps-3">Editura:</label>
                 <input
                     type="text"

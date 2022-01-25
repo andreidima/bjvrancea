@@ -38,6 +38,15 @@
                             </tr>
                             <tr>
                                 <td class="pe-4">
+                                    Inventar
+                                </td>
+                                <td>
+                                    {{ $carte_scanata->inventar }}
+                                </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="pe-4">
                                     Editura
                                 </td>
                                 <td>

@@ -15,8 +15,18 @@
                 <form class="needs-validation" novalidate method="GET" action="/carti-scanate">
                     @csrf
                     <div class="row mb-1 input-group custom-search-form justify-content-center">
-                        <input type="text" class="form-control form-control-sm col-md-4 me-1 border rounded-pill" id="search_titlu" name="search_titlu" placeholder="Titlu" autofocus
-                                value="{{ $search_titlu }}">
+                        <div class="col-md-5 px-1">
+                            <input type="text" class="form-control form-control-sm me-1 border rounded-pill" id="search_titlu" name="search_titlu" placeholder="Titlu" autofocus
+                                    value="{{ $search_titlu }}">
+                        </div>
+                        <div class="col-md-4 px-1">
+                            <input type="text" class="form-control form-control-sm me-1 border rounded-pill" id="search_autor" name="search_autor" placeholder="Autor" autofocus
+                                    value="{{ $search_autor }}">
+                        </div>
+                        <div class="col-md-3 px-1">
+                            <input type="text" class="form-control form-control-sm me-1 border rounded-pill" id="search_inventar" name="search_inventar" placeholder="Inventar" autofocus
+                                    value="{{ $search_inventar }}">
+                        </div>
                     </div>
                     <div class="row input-group custom-search-form justify-content-center">
                         <button class="btn btn-sm btn-primary text-white col-md-4 me-1 border border-dark rounded-pill" type="submit">
@@ -46,8 +56,9 @@
                             <th>Nr. Crt.</th>
                             <th>Titlu</th>
                             <th>Autor</th>
-                            <th>Editura</th>
-                            <th>Anul</th>
+                            {{-- <th>Editura</th>
+                            <th>Anul</th> --}}
+                            <th>Inventar</th>
                             <th>Nr. pagini</th>
                             <th>Utilizator</th>
                             <th class="text-end">Acțiuni</th>
@@ -66,40 +77,45 @@
                                     <b>{{ $carte_scanata->autor ?? '' }}</b>
                                 </td>
                                 <td>
+                                    <b>{{ $carte_scanata->inventar ?? '' }}</b>
+                                </td>
+                                {{-- <td>
                                     <b>{{ $carte_scanata->editura ?? '' }}</b>
                                 </td>
                                 <td>
                                     <b>{{ $carte_scanata->anul ?? '' }}</b>
-                                </td>
+                                </td> --}}
                                 <td class="text-center">
                                     <b>{{ $carte_scanata->nr_pagini ?? '' }}</b>
                                 </td>
                                 <td>
                                     <b>{{ $carte_scanata->utilizator->name ?? '' }}</b>
                                 </td>
-                                <td class="d-flex justify-content-end">
-                                    <a href="{{ $carte_scanata->path() }}"
-                                        class="flex me-1"
-                                    >
-                                        <span class="badge bg-success">Vizualizează</span>
-                                    </a>
-                                    @if (Gate::allows('modifica-carte-scanata', $carte_scanata))
-                                        <a href="{{ $carte_scanata->path() }}/modifica"
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="{{ $carte_scanata->path() }}"
                                             class="flex me-1"
                                         >
-                                            <span class="badge bg-primary">Modifică</span>
+                                            <span class="badge bg-success">Vizualizează</span>
                                         </a>
-                                        <div style="flex" class="">
-                                            <a
-                                                href="#"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#stergeCarteScanata{{ $carte_scanata->id }}"
-                                                title="Șterge Cartea Scanată"
-                                                >
-                                                <span class="badge bg-danger">Șterge</span>
+                                        @if (Gate::allows('modifica-carte-scanata', $carte_scanata))
+                                            <a href="{{ $carte_scanata->path() }}/modifica"
+                                                class="flex me-1"
+                                            >
+                                                <span class="badge bg-primary">Modifică</span>
                                             </a>
-                                        </div>
-                                    @endif
+                                            <div style="flex" class="">
+                                                <a
+                                                    href="#"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#stergeCarteScanata{{ $carte_scanata->id }}"
+                                                    title="Șterge Cartea Scanată"
+                                                    >
+                                                    <span class="badge bg-danger">Șterge</span>
+                                                </a>
+                                            </div>
+                                        @endif
+                                    </div>
                                 </td>
                             </tr>
                         @empty
