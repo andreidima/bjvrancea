@@ -32,7 +32,7 @@ class CarteScanataController extends Controller
             ->when($search_inventar, function ($query, $search_inventar) {
                 return $query->where('inventar', $search_inventar);
             })
-            ->latest()
+            ->orderBy('created_at')
             ->simplePaginate(25);
 // dd($carti_scanate->first());
 
