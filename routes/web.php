@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CarteScanataController;
+use App\Http\Controllers\StatisticaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('/carti-scanate', CarteScanataController::class,  ['parameters' => ['carti-scanate' => 'carte_scanata']]);
 });
+
+Route::middleware('role:superadmin')->group(function () {
+    Route::get('statistica', [StatisticaController::class, 'statistica']);
+});
+

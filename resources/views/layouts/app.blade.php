@@ -45,6 +45,14 @@
                                 Cărți scanate
                             </a>
                         </li>
+                        @if(auth()->user()->role === "superadmin")
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/statistica">
+                                    {{-- <i class="fas fa-book me-1"></i> --}}
+                                    Statistică
+                                </a>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
